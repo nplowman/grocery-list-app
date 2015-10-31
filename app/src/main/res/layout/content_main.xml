@@ -9,8 +9,8 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <ListView
+    <ExpandableListView
         android:id="@+id/groceryList"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"></ListView>
+        android:layout_height="fill_parent"></ExpandableListView>
 </RelativeLayout>
