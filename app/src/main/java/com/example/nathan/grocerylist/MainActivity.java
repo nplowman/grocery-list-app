@@ -9,7 +9,13 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ListView;
+import com.example.nathan.grocerylist.grocery.*;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +26,21 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String[] sampleGroceryList = new String[] { "Milk", "Eggs", "Bread", "Noodles"};
-        ArrayAdapter<String> groceryListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, sampleGroceryList);
-        ListView groceryList = (ListView)findViewById(R.id.groceryList);
-        groceryList.setAdapter(groceryListAdapter);
+        GroceryList list = new GroceryList();
+        list.addItem("Apples", "Produce");
+        list.addItem("Oranges", "Produce");
+        list.addItem("Sugar", "Baking");
+        list.addItem("Canola Oil", "Baking");
+        list.addItem("Eggs", "Dairy");
+        list.addItem("Milk", "Dairy");
+
+        GroceryListAdapter listAdapter = new GroceryListAdapter(this, list);
+
+        // get the listview
+        ExpandableListView expListView = (ExpandableListView) findViewById(R.id.groceryList);
+
+        //Set the view
+        expListView.setAdapter(listAdapter);
     }
 
     @Override
