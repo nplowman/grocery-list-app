@@ -1,4 +1,4 @@
-package plowman.grocerylist;
+package com.example.nathan.grocerylist;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
